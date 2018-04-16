@@ -1,1 +1,24 @@
+INSERT INTO 'events' ('name','date','description','URL','location','price') VALUES
+('Barbecue 12 avril','12/04/2018','Le premier barbecue de la saison, afin de faire connaissance avec les nouveaux membres','https://www.google.com/intl/fr/drive/Barbecue_12/4','41°24'12,2"N 2°10'26,5"E'),
+('Anniversaire Jean Dupont 16 avril','16/04/2018','41°24'12,2"N 2°10'26,5"E',17),
 
+INSERT INTO 'members_events' ('login','event_name','interest','participation','paid') VALUES
+('user1','Barbecue 12 avril','true','false','false'),
+('user2','Barbecue 12 avril','true','true','false'),
+('user3','Barbecue 12 avril','true','true','true'),
+('user4','Barbecue 12 avril','false','false','false')
+
+INSERT INTO 'membership_fees' ('login','year') VALUES
+('user1','2018'),
+('user2','2018'),
+('user1','2017')
+
+INSERT INTO `membres`(`login`, `password`, `first_name`, `last_name`, `birth_date`, `adress`, `phone`, `mail`, `privileges`) VALUES 
+('user1','user1','Olivier','De Vos','1992-02-11','97 rue Fritz Toussaints 1050 Ixelles', '02/556.25.26', 'olivier.devos@student.vinci.be',3),
+('user2','user2','Mehdi','Ibnlfassi','1997-10-15','13 rue Bidon Néant','0474/72.41.33','mehdi.ibnlfassi@student.vinci.be',2), 
+('user3','user3','Jean','LeGrand','1990-12-25',' ',' ','jeanlegrand@mail.com',1), 
+('user4','user4','anonymous','anonymous',' ',' ',' ','indiraequi@gmail.com',0)
+
+INSERT INTO 'years' ('year') VALUES
+('2018'),
+('2017')
