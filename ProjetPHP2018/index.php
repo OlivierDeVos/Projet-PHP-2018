@@ -1,4 +1,5 @@
 <?php
+	#Test Github
 	session_start();
 	# Prise du temps actuel au début du script
 	$time_start = microtime(true);
