@@ -57,10 +57,10 @@
 						?>
 								</ul>
 								<div class="navbar-form navbar-right inline-form">
-						            <div>
+						            <div class="form-group">
 						              <a href="index.php?action=logout"><button type="submit" class="btn btn-primary btn-sm"></span> Déconexion</button></a>
+						            	<img src="<?php echo $_SESSION['picture']; ?>" width="50px" height="50px" >
 						            </div>
-
 						        </div>
 							</div>
 						<?php	

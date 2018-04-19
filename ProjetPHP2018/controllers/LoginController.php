@@ -17,10 +17,10 @@ class LoginController{
 				$notification = 'Ce compte n\'existe pas';
 			}else{
 				if(password_verify($_POST['pw'],Db::getInstance()->login($_POST['name'])->pw())){
-					var_dump(Db::getInstance()->login($_POST['name']));
 					if(Db::getInstance()->login($_POST['name'])->admin()>0){
 						$_SESSION['name']=$_POST['name'];
 						$_SESSION['admin']=Db::getInstance()->login($_POST['name'])->admin();
+						$_SESSION['picture']=Db::getInstance()->login($_POST['name'])->picture();
 
 						header("Location: index.php?action=membre");
 

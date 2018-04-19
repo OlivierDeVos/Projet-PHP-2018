@@ -10,8 +10,8 @@
 		<tbody>
 			<?php foreach ($tabevent as $i => $event) { ?>
 				<tr>
-				<td><span class="html"><?php echo $date->html_date() ?></span></td>
-				<td><?php echo $name->html_name()?></td>		
+				<td><span class="html"><?php echo $tabevent[$i]->date(); ?></span></td>
+				<td><?php echo $tabevent[$i]->name(); ?></td>		
 				</tr>
 			<?php } ?>
 		</tbody>

@@ -35,7 +35,7 @@ class Db{
 				return null;
 			else{
 				$row=$result->fetch();
-				return new login($row->login,$row->password,null,null,null,null,null,null,$row->privileges);
+				return new login($row->login,$row->password,$row->first_name,$row->last_name,$row->birth_date,$row->adress,$row->phone,$row->mail,$row->Picture,$row->privileges);
 			}
 				
 	}
@@ -59,5 +59,27 @@ class Db{
 	public function setPrivileges($bit,$nick) {
 		$query = 'UPDATE `members` SET `privileges`='.$this->_db->quote($bit).' WHERE login='.$this->_db->quote($nick);
 		$this->_db->prepare($query)->execute();
+	}
+
+
+	public function calendar(){
+		$query = "SELECT * FROM events ";
+		$result = $this->_db->query($query);
+			
+		$tableau=array();
+		if($result->rowcount()==0){
+			return $tableau;
+		}
+		else{
+			while($row=$result->fetch()){
+					$tableau[] = new event($row->name,$row->date,$row->description,$row->URL,$row->location);
+			}
+			return $tableau;
+		}
+	}
+	public function updateMember($login,$firstName,$lastName,$birth,$adress,$phone,$picture,$mail) {
+		$query = 'UPDATE `members` SET `first_name`='.$this->_db->quote($firstName).',`last_name`='.$this->_db->quote($lastName).',`birth_date`='.$this->_db->quote($birth).',`adress`='.$this->_db->quote($adress).',`phone`='.$this->_db->quote($phone).',`picture`='.$this->_db->quote($picture).',`mail`='.$this->_db->quote($mail).' WHERE `login` = '.$this->_db->quote($login);
+		$this->_db->prepare($query)->execute();
+
 	}
 }

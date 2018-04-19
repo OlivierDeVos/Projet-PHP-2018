@@ -8,9 +8,10 @@ class Login{
 	private $_adress;
 	private $_phone;
 	private $_mail;
+	private $_picture;
 	private $_admin;
 	
-	public function  __construct($nick,$pw,$firstName,$lastName,$birthDate,$adress,$phone,$mail,$admin){
+	public function  __construct($nick,$pw,$firstName,$lastName,$birthDate,$adress,$phone,$mail,$picture,$admin){
 		$this->_pw = $pw;
 		$this->_nick = $nick;
 		$this->_firstName = $firstName;
@@ -19,6 +20,7 @@ class Login{
 		$this->_adress = $adress;
 		$this->_phone = $phone;
 		$this->_mail = $mail;
+		$this->_picture = $picture;
 		$this->_admin = $admin;
 	}
 	
@@ -45,6 +47,9 @@ class Login{
 	}
 	public function mail(){
 		return $this->_mail;
+	}
+	public function picture(){
+		return $this->_picture;
 	}
 	public function admin(){
 		return $this->_admin;

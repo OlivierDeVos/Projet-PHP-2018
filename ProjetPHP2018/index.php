@@ -1,5 +1,4 @@
 <?php
-	#Test Github
 	session_start();
 	# Prise du temps actuel au début du script
 	$time_start = microtime(true);
@@ -45,6 +44,10 @@
 		case 'register':
 			require_once ('controllers/RegisterController.php');
 			$controller = new RegisterController();
+			break;
+		case 'calendar':
+			require_once ('controllers/CalendarController.php');
+			$controller = new CalendarController();
 			break;
 		default: # Par défaut, le contrôleur de l'accueil est sélectionné
 			require_once('controllers/AccueilController.php');	
